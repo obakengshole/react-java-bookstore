@@ -3,7 +3,8 @@ jdk:
   - openjdk11
 
 deploy:
+  script: echo "HToken" ${HEROKU_TOKEN} "HToken2" $HEROKU_TOKEN
   provider: heroku
   api_key:
-    secure: $HEROKU_TOKEN
+    secure: ${HEROKU_TOKEN}
   app: "react-java-bookstore"
