@@ -1,7 +1,6 @@
 language: java
 jdk:
-  - openjdk11
-  - oraclejdk11
+  - openjdk8
 
 deploy:
   skip_cleanup: true
