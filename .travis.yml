@@ -3,6 +3,7 @@ jdk:
   - openjdk8
 
 deploy:
+  skip_cleanup: true
   provider: heroku
   api_key: $HEROKU_TOKEN
   app: "react-java-bookstore"
