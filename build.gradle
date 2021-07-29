@@ -21,6 +21,7 @@ configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
 	}
+	extraLibs
 }
 
 repositories {
@@ -39,4 +40,10 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+
+jar {
+	from {
+		configurations.extraLibs.collect( it.isDirectory() ? it : zipTree(it) )
+	}
 }
