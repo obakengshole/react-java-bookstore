@@ -3,7 +3,7 @@ jdk:
   - openjdk8
 
 script:
-  - gradle clean build
+  - ./gradlew clean build
 
 deploy:
   skip_cleanup: true
