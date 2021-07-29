@@ -10,6 +10,10 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 
+apply plugin: 'application'
+mainClassName = 'com.wecode.bookstore.BookstoreApplication'
+
+
 jar {
 	baseName('bookstore')
 	version('0.0.1-SNAPSHOT')
@@ -53,12 +57,4 @@ dependencies {
 
 test {
 	useJUnitPlatform()
-}
-
-application {
-	mainClassName = 'com.wecode.bookstore.BookstoreApplication'
-}
-
-bootJar {
-	mainClassName = 'com.wecode.bookstore.BookstoreApplication'
 }
