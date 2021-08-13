@@ -1,0 +1,1 @@
+insert into book (id, title, description, release_year) values ('65c502b6-a46d-49db-b964-87de17966fb7', 'Java Edition 1', 'An Indepth Look into Java', 2018)
