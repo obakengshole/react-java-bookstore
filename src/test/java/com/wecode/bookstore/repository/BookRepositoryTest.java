@@ -24,13 +24,20 @@ public class BookRepositoryTest {
     void shouldFetchAllBooksInDB() {
         Iterable<Book> all = bookRepository.findAll();
         long totalBookCount = StreamSupport.stream(all.spliterator(), false).count();
-        Assertions.assertEquals(totalBookCount, 2);
+        Assertions.assertEquals(totalBookCount, 17);
     }
 
     @Test
     @Sql(scripts = {"classpath:InsertInitialBookForTest.sql"})
     void shouldReturnOneBookWhenTitle() {
         List<Book> books = bookRepository.findBooksByTitle("Java Edition 1");
+        Assertions.assertEquals(books.size(), 1);
+    }
+
+    @Test
+    @Sql(scripts = {"classpath:InsertInitialBookForTest.sql"})
+    void shouldReturnOneBookWhenTitleIgnoreCase() {
+        List<Book> books = bookRepository.findBooksByTitleIgnoreCase("java edition 1");
         Assertions.assertEquals(books.size(), 1);
     }
 }
